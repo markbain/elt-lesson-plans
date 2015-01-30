@@ -2,7 +2,7 @@
 /*
 Plugin Name: 	ELT Lesson Plans
 Description: 	Add a "Lesson Plan" custom post type to your site.
-Version: 		0.0
+Version: 		0.1
 Author: 		Mark Bain
 Author URI: 	http:/markbaindesign.com
 */
