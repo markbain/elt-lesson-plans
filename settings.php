@@ -28,7 +28,7 @@ if(!class_exists('GISIG_Lesson_Inspiration_Settings'))
         	
 			add_settings_section( // First Section
         	    'gisig_Lesson_inspiration-section-1' /* ID of this section */, 
-        	    'Global Description' /* Display name of this section */, 
+        	    'About ELT Lesson Plans' /* Display name of this section */, 
         	    array(&$this, 'settings_section_one_gisig_Lesson_inspiration'), 
         	    'gisig_Lesson_inspiration'
         	);
@@ -81,7 +81,7 @@ if(!class_exists('GISIG_Lesson_Inspiration_Settings'))
         public function settings_section_one_gisig_Lesson_inspiration()
         {
             // Think of this as help text for the section.
-            echo 'Here you can write a global description of what the Lessons are, how to use them, etc. This text will be repeated on each Lesson page.';
+            echo 'ELT Lesson Plans is a free plugin designed to allow ELT teachers and materials writers to publish lesson plans on their site. By using a custom post type, these lesson plans are organised in a separate section, with its own archive.';
         }
 		
         public function settings_section_two_gisig_Lesson_inspiration()

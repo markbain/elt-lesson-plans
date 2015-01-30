@@ -14,7 +14,7 @@ if(!class_exists('Custom_Tax_Template'))
 
 	{
 
-		const POST_TYPE	= "Lessons";
+		const POST_TYPE	= "lessons";
 
 
 
@@ -94,7 +94,7 @@ if(!class_exists('Custom_Tax_Template'))
 
 				'hierarchical'      => false,
 
-				'query_var'         => 'Lessons',
+				'query_var'         => 'lessons',
 
 			
 
@@ -140,7 +140,7 @@ if(!class_exists('Custom_Tax_Template'))
 
 			/* Register the 'topic' taxonomy. */
 
-			register_taxonomy( 'topic', array( 'Lessons' ), $args );
+			register_taxonomy( 'topic', array( 'lessons' ), $args );
 
 			
 
@@ -172,7 +172,7 @@ if(!class_exists('Custom_Tax_Template'))
 
 					'hierarchical'      => false,
 
-					'query_var'         => 'Lessons',
+					'query_var'         => 'lessons',
 
 			
 
@@ -218,7 +218,7 @@ if(!class_exists('Custom_Tax_Template'))
 
 			/* Register the 'level' taxonomy. */
 
-			register_taxonomy( 'level', array( 'Lessons' ), $args );
+			register_taxonomy( 'level', array( 'lessons' ), $args );
 
 		}
 

@@ -6,6 +6,46 @@ Version: 		0.0
 Author: 		Mark Bain
 Author URI: 	http:/markbaindesign.com
 */
+
+/**
+ * Silence is golden; exit if accessed directly
+ */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Bootstrap CMB2
+ * No need to check versions or if CMB2 is already loaded... the init file does that already!
+ *
+ * Check to see if CMB2 exists, and either bootstrap it or add a notice that it is missing
+ */
+if ( file_exists( dirname( __FILE__ ) . '/inc/CMB2/init.php' ) ) {
+	require_once 'inc/CMB2/init.php';
+} else {
+	add_action( 'admin_notices', 'mbd_cmb2_example_plugin_missing_cmb2' );
+}
+
+/**
+ * Load metaboxes
+ */
+require_once 'inc/local-user-avatar.php';
+require_once 'inc/more-about-user.php';
+require_once 'inc/user-social-media-urls.php';
+require_once 'inc/additional-post-media.php';
+
+/**
+ * Add an error notice to the dashboard if CMB2 is missing from the plugin
+ *
+ * @return void
+ */
+function mbd_cmb2_example_plugin_missing_cmb2() { ?>
+<div class="error">
+	<p><?php _e( 'CMB2 Example Plugin is missing CMB2! Shit!', 'cmb2-example-plugin' ); ?></p>
+</div>
+<?php }
+
+
 define('GISIGELPATH',   plugin_dir_path(__FILE__));
 define('GISIGELURL',    plugins_url('', __FILE__));
 
@@ -29,7 +69,10 @@ if(!class_exists('GISIG_Lesson_Inspiration'))
         	// Register custom taxonomies
             require_once(sprintf("%s/post-types/custom_tax_template.php", dirname(__FILE__)));
             $Custom_Tax_Template = new Custom_Tax_Template();
-			
+
+            // Register custom meta
+            require_once(sprintf("%s/cmb-functions.php", dirname(__FILE__)));
+
 			
 		} // END public function __construct
 	    
@@ -142,10 +185,10 @@ if(class_exists('GISIG_Lesson_Inspiration'))
 			
 			// Lesson Meta
 			
-			$Lesson_meta = '';
+			$lesson_meta = '';
 			
 			
-			$Lesson_meta .= $content;
+			$lesson_meta .= $content;
 			return $Lesson_meta;
 		} else {
 			return $content;
@@ -156,6 +199,9 @@ if(class_exists('GISIG_Lesson_Inspiration'))
 	}
 	add_filter( 'the_content', 'gisig_filter_the_content' );
 
+	
+
+	
 	
     // Add a link to the settings page onto the plugin page
     if(isset($gisig_Lesson_inspiration))
