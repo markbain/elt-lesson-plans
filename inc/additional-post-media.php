@@ -1,6 +1,6 @@
 <?php
 /**
- * Example: Add additional media to your blog posts
+ * Add meta boxes to lesson plans
  */
 if( ! function_exists( 'cmb2_example_plugin_post_media' ) ) {
 	function cmb2_example_plugin_post_media( array $meta_boxes = array() ) {
