@@ -56,6 +56,7 @@ if(!class_exists('Post_Type_Template'))
     				'public' => true,
     				'has_archive' => 'Lessons',
     				'description' => __("Add a Lesson Plan to your site."),
+                    'menu_icon'           => 'dashicons-welcome-learn-more',
     				'supports' => array(
 						'title',
 						'editor',
